@@ -18,6 +18,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
 
         guard let url: URL = Bundle.main.url(forResource: "musette", withExtension: "mp3") else {
+            fatalError("could not find file musette.mp3");
             return;
         }
         print("url = \(url)");
