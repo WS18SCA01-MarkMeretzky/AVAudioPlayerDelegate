@@ -63,6 +63,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
         if let error: Error = error {
             print("audioPlayerDecodeErrorDidOccur: \(error)");
+        } else {
+            print("audioPlayerDecodeErrorDidOccur");
         }
     }
 }
