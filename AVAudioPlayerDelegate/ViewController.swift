@@ -19,15 +19,13 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
 
         guard let url: URL = Bundle.main.url(forResource: "musette", withExtension: "mp3") else {
             fatalError("could not find file musette.mp3");
-            return;
         }
         print("url = \(url)");
         
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: url);
         } catch {
-            print("could not create AVAudioPlayer: \(error)");
-            return;
+            fatalError("could not create AVAudioPlayer: \(error)");
         }
         
         audioPlayer!.delegate = self;
@@ -68,4 +66,3 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
 }
-
